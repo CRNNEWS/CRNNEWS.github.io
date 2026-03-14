@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breaking News, Latest News and Videos | CNN</title>
+  <meta name="description" content="View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- ========== TOP BAR (Edition + Timestamp) ========== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="edition-links">
+        <a href="index.html" class="active">US</a>
+        <a href="section.html?cat=international">International</a>
+        <a href="section.html?cat=arabic">Arabic</a>
+        <a href="section.html?cat=espanol">Español</a>
+      </div>
+      <div class="top-bar-right">
+        <span class="timestamp" id="liveTimestamp"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="main-header">
+    <div class="header-inner">
+      <button class="hamburger-btn" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="header-left">
+        <a href="section.html?cat=watch" class="header-link">Watch</a>
+        <a href="section.html?cat=listen" class="header-link">Listen</a>
+      </div>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 200 40" width="120" height="28">
+          <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+                fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif"
+                font-weight="900" font-size="38" letter-spacing="4">CNN</text>
+        </svg>
+      </a>
+      <div class="header-right">
+        <button class="search-btn" aria-label="Search" onclick="document.getElementById('searchOverlay').classList.toggle('open')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <a href="signin.html" class="sign-in-btn">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== NAV BAR ========== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="section.html?cat=us" class="nav-link active">US</a></li>
+        <li><a href="section.html?cat=world" class="nav-link">World</a></li>
+        <li><a href="section.html?cat=politics" class="nav-link">Politics</a></li>
+        <li><a href="section.html?cat=business" class="nav-link">Business</a></li>
+        <li><a href="section.html?cat=health" class="nav-link">Health</a></li>
+        <li><a href="section.html?cat=entertainment" class="nav-link">Entertainment</a></li>
+        <li><a href="section.html?cat=style" class="nav-link">Style</a></li>
+        <li><a href="section.html?cat=travel" class="nav-link">Travel</a></li>
+        <li><a href="section.html?cat=sports" class="nav-link">Sports</a></li>
+        <li><a href="section.html?cat=science" class="nav-link">Science</a></li>
+        <li><a href="section.html?cat=climate" class="nav-link">Climate</a></li>
+        <li><a href="section.html?cat=weather" class="nav-link">Weather</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== SEARCH OVERLAY ========== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+      <button class="search-close" onclick="document.getElementById('searchOverlay').classList.remove('open')">&times;</button>
+      <form class="search-form" onsubmit="event.preventDefault(); window.location.href='search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">
+        <input type="text" id="searchInput" placeholder="Search CNN...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== BREAKING NEWS TICKER ========== -->
+  <div class="breaking-news-bar">
+    <div class="breaking-label">LIVE UPDATES</div>
+    <div class="breaking-ticker">
+      <a href="article.html?id=8">Ongoing developments in global geopolitical tensions — latest updates from around the world</a>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="main-content">
+
+    <!-- ===== HERO / FEATURED STORY ===== -->
+    <section class="hero-zone">
+      <div class="hero-zone-inner">
+        <div class="hero-main">
+          <a href="article.html?id=8" class="hero-card">
+            <div class="hero-image">
+              <img src="https://picsum.photos/id/1015/900/500" alt="Featured story image" loading="eager">
+              <div class="hero-image-overlay"></div>
+            </div>
+            <div class="hero-text">
+              <span class="hero-kicker">BREAKING NEWS</span>
+              <h2 class="hero-headline">Diplomatic efforts intensify as regional conflicts create ripple effects worldwide</h2>
+              <p class="hero-timestamp" id="heroTimestamp"></p>
+            </div>
+          </a>
+        </div>
+        <div class="hero-sidebar">
+          <a href="article.html?id=13" class="sidebar-story">
+            <div class="sidebar-img">
+              <img src="https://picsum.photos/id/1025/300/180" alt="" loading="lazy">
+            </div>
+            <h3 class="sidebar-headline">Administration reshuffles key cultural appointments amid internal tensions</h3>
+          </a>
+          <a href="article.html?id=34" class="sidebar-story">
+            <div class="sidebar-img">
+              <img src="https://picsum.photos/id/1035/300/180" alt="" loading="lazy">
+            </div>
+            <h3 class="sidebar-headline">Arctic ice coverage reaches new seasonal low as warming accelerates</h3>
+          </a>
+          <a href="article.html?id=33" class="sidebar-story">
+            <div class="sidebar-img">
+              <img src="https://picsum.photos/id/1040/300/180" alt="" loading="lazy">
+            </div>
+            <h3 class="sidebar-headline">Researchers achieve breakthrough in quantum computing stability</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STORY LINKS STRIP ===== -->
+    <section class="story-links-strip">
+      <div class="strip-inner">
+        <a href="article.html?id=15" class="strip-link">
+          <span class="strip-bullet">•</span>
+          Senate committee advances bill on infrastructure spending
+        </a>
+        <a href="article.html?id=19" class="strip-link">
+          <span class="strip-bullet">•</span>
+          Markets rally as investors respond to earnings season surprises
+        </a>
+        <a href="article.html?id=10" class="strip-link">
+          <span class="strip-bullet">•</span>
+          Humanitarian organizations call for greater international cooperation
+        </a>
+        <a href="article.html?id=9" class="strip-link">
+          <span class="strip-bullet live">LIVE</span>
+          European leaders convene emergency session to address energy crisis
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== TOP STORIES SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">More Top Stories</h2>
+        <div class="stories-grid">
+          <a href="article.html?id=1" class="story-card story-card-featured">
+            <div class="story-card-img">
+              <img src="https://picsum.photos/id/1050/600/350" alt="" loading="lazy">
+            </div>
+            <h3 class="story-card-headline">Communities across the nation grapple with rising costs and search for solutions</h3>
+          </a>
+          <div class="story-card-list">
+            <a href="article.html?id=2" class="story-list-item">
+              <h3>New study reveals shifting patterns in how Americans access healthcare services</h3>
+            </a>
+            <a href="article.html?id=3" class="story-list-item">
+              <h3>TSA workers hear from leadership amid ongoing budget uncertainty</h3>
+            </a>
+            <a href="article.html?id=4" class="story-list-item">
+              <h3>Local candidate's viral social media strategy captures national attention</h3>
+            </a>
+            <a href="article.html?id=5" class="story-list-item">
+              <h3><span class="video-label">Video</span> Dramatic surveillance footage shows brazen robbery at luxury retailer</h3>
+            </a>
+            <a href="article.html?id=6" class="story-list-item">
+              <h3>Major sporting event delayed by nearby law enforcement activity</h3>
+            </a>
+            <a href="article.html?id=7" class="story-list-item">
+              <h3>Weather experts predict significant climate pattern shift in coming months</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== POLITICS SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">Latest Politics</h2>
+        <div class="stories-duo-grid">
+          <a href="article.html?id=13" class="duo-card">
+            <div class="duo-card-img">
+              <img src="https://picsum.photos/id/1060/500/300" alt="" loading="lazy">
+            </div>
+            <h3 class="duo-headline">Administration reshuffles key cultural appointments amid internal tensions</h3>
+          </a>
+          <a href="article.html?id=14" class="duo-card">
+            <div class="duo-card-img">
+              <img src="https://picsum.photos/id/1062/500/300" alt="" loading="lazy">
+            </div>
+            <h3 class="duo-headline">Fashion choices of political leaders spark unexpected public debate</h3>
+          </a>
+        </div>
+        <div class="politics-links">
+          <a href="article.html?id=15" class="politics-link">Senate committee advances bill on infrastructure spending</a>
+          <a href="article.html?id=16" class="politics-link">Governor faces recall effort over controversial education policy</a>
+          <a href="article.html?id=17" class="politics-link">Analysis: Why the next election cycle could reshape party dynamics</a>
+          <a href="article.html?id=18" class="politics-link">State attorney general launches investigation into corporate practices</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== BUSINESS / MONEY SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">Money Matters</h2>
+        <div class="stories-quad-grid">
+          <a href="article.html?id=19" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/180/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Markets rally as investors respond to earnings season surprises</h3>
+          </a>
+          <a href="article.html?id=20" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/160/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Housing market shows signs of cooling in key metro areas</h3>
+          </a>
+          <a href="article.html?id=21" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/200/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Electric vehicle makers compete for government incentive programs</h3>
+          </a>
+          <a href="article.html?id=22" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/250/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Workers demand better benefits as labor market tightens across sectors</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== WORLD SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">World</h2>
+        <div class="stories-grid">
+          <a href="article.html?id=8" class="story-card story-card-featured">
+            <div class="story-card-img">
+              <img src="https://picsum.photos/id/274/600/350" alt="" loading="lazy">
+            </div>
+            <h3 class="story-card-headline">Diplomatic efforts intensify as regional conflicts create ripple effects worldwide</h3>
+          </a>
+          <div class="story-card-list">
+            <a href="article.html?id=9" class="story-list-item">
+              <h3>European leaders convene emergency session to address energy crisis</h3>
+            </a>
+            <a href="article.html?id=10" class="story-list-item">
+              <h3>Humanitarian organizations call for greater international cooperation</h3>
+            </a>
+            <a href="article.html?id=11" class="story-list-item">
+              <h3>Asia-Pacific trade agreement enters new phase of negotiations</h3>
+            </a>
+            <a href="article.html?id=12" class="story-list-item">
+              <h3>African Union summit focuses on infrastructure and economic development</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== ENTERTAINMENT SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">Entertainment</h2>
+        <div class="stories-quad-grid">
+          <a href="article.html?id=25" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/335/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Award season heats up as studios campaign for top honors</h3>
+          </a>
+          <a href="article.html?id=26" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/318/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Streaming platforms announce slate of upcoming original series</h3>
+          </a>
+          <a href="article.html?id=27" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/325/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Celebrity memoir breaks publishing records in first week of release</h3>
+          </a>
+          <a href="article.html?id=28" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/342/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Music festival lineups draw both praise and criticism from fans</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== HEALTH SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">Health</h2>
+        <div class="stories-duo-grid">
+          <a href="article.html?id=23" class="duo-card">
+            <div class="duo-card-img">
+              <img src="https://picsum.photos/id/433/500/300" alt="" loading="lazy">
+            </div>
+            <h3 class="duo-headline">New research suggests connection between sleep patterns and long-term cognitive health</h3>
+          </a>
+          <a href="article.html?id=24" class="duo-card">
+            <div class="duo-card-img">
+              <img src="https://picsum.photos/id/425/500/300" alt="" loading="lazy">
+            </div>
+            <h3 class="duo-headline">Hospitals adopt AI-driven tools to improve patient diagnosis accuracy</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== SPORTS SECTION ===== -->
+    <section class="content-section">
+      <div class="section-inner">
+        <h2 class="section-title">Sports</h2>
+        <div class="stories-quad-grid">
+          <a href="article.html?id=29" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/501/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Championship race intensifies as playoff contenders battle for position</h3>
+          </a>
+          <a href="article.html?id=30" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/513/400/240" alt="" loading="lazy">
+            </div>
+            <h3>Star athlete's comeback story inspires fans across the globe</h3>
+          </a>
+          <a href="article.html?id=31" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/525/400/240" alt="" loading="lazy">
+            </div>
+            <h3>College basketball tournament delivers shock results in opening rounds</h3>
+          </a>
+          <a href="article.html?id=32" class="quad-card">
+            <div class="quad-card-img">
+              <img src="https://picsum.photos/id/535/400/240" alt="" loading="lazy">
+            </div>
+            <h3>International soccer governing body announces major rule changes</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html">
+          <svg viewBox="0 0 200 40" width="100" height="24">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+                  fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif"
+                  font-weight="900" font-size="38" letter-spacing="4">CNN</text>
+          </svg>
+        </a>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>News</h4>
+          <a href="section.html?cat=us">US</a>
+          <a href="section.html?cat=world">World</a>
+          <a href="section.html?cat=politics">Politics</a>
+          <a href="section.html?cat=business">Business</a>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <a href="section.html?cat=health">Health</a>
+          <a href="section.html?cat=entertainment">Entertainment</a>
+          <a href="section.html?cat=style">Style</a>
+          <a href="section.html?cat=travel">Travel</a>
+        </div>
+        <div class="footer-col">
+          <h4>Watch</h4>
+          <a href="section.html?cat=watch">Live TV</a>
+          <a href="section.html?cat=watch">Shows</a>
+          <a href="section.html?cat=listen">Listen</a>
+          <a href="section.html?cat=watch">Films</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="section.html?cat=weather">Weather</a>
+          <a href="section.html?cat=games">Games</a>
+          <a href="section.html?cat=sports">Sports</a>
+          <a href="section.html?cat=science">Science</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About CNN</a>
+          <a href="newsletters.html">Newsletters</a>
+          <a href="about.html">Transcripts</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="privacy.html#cookies">Cookie Settings</a>
+          <a href="privacy.html#ads">Ad Choices</a>
+          <a href="accessibility.html">Accessibility & CC</a>
+        </div>
+        <p class="footer-copyright">© 2026 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.</p>
+        <p class="footer-disclaimer">CNN Sans™ & © 2016 Cable News Network.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Live timestamp
+    const now = new Date();
+    const ts = 'Updated ' + now.toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit',timeZoneName:'short'}) + 
+      ', ' + now.toLocaleDateString('en-US', {weekday:'short', month:'long', day:'numeric', year:'numeric'});
+    document.getElementById('liveTimestamp').textContent = ts;
+    document.getElementById('heroTimestamp').textContent = ts;
+
+    // Hamburger toggle
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('nav-open');
+      this.classList.toggle('active');
+    });
+
+    // Sticky nav on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('nav-sticky', window.pageYOffset > 120);
+    });
+
+    // Breaking news ticker animation
+    const ticker = document.querySelector('.breaking-ticker a');
+    if (ticker) {
+      setInterval(() => {
+        ticker.classList.add('ticker-flash');
+        setTimeout(() => ticker.classList.remove('ticker-flash'), 600);
+      }, 8000);
+    }
+  </script>
+
+</body>
+</html>

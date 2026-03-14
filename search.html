@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - CNN</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+  <div class="top-bar"><div class="top-bar-inner"><div class="edition-links"><a href="index.html" class="active">US</a><a href="section.html?cat=international">International</a><a href="section.html?cat=arabic">Arabic</a><a href="section.html?cat=espanol">Español</a></div><div class="top-bar-right"><span class="timestamp" id="liveTimestamp"></span></div></div></div>
+  <header class="main-header"><div class="header-inner"><button class="hamburger-btn" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button><div class="header-left"><a href="section.html?cat=watch" class="header-link">Watch</a><a href="section.html?cat=listen" class="header-link">Listen</a></div><a href="index.html" class="logo"><svg viewBox="0 0 200 40" width="120" height="28"><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif" font-weight="900" font-size="38" letter-spacing="4">CNN</text></svg></a><div class="header-right"><a href="signin.html" class="sign-in-btn">Sign In</a></div></div></header>
+  <nav class="main-nav" id="mainNav"><div class="nav-inner"><ul class="nav-links"><li><a href="section.html?cat=us" class="nav-link">US</a></li><li><a href="section.html?cat=world" class="nav-link">World</a></li><li><a href="section.html?cat=politics" class="nav-link">Politics</a></li><li><a href="section.html?cat=business" class="nav-link">Business</a></li><li><a href="section.html?cat=health" class="nav-link">Health</a></li><li><a href="section.html?cat=entertainment" class="nav-link">Entertainment</a></li><li><a href="section.html?cat=style" class="nav-link">Style</a></li><li><a href="section.html?cat=travel" class="nav-link">Travel</a></li><li><a href="section.html?cat=sports" class="nav-link">Sports</a></li><li><a href="section.html?cat=science" class="nav-link">Science</a></li><li><a href="section.html?cat=climate" class="nav-link">Climate</a></li><li><a href="section.html?cat=weather" class="nav-link">Weather</a></li></ul></div></nav>
+
+  <main class="main-content">
+    <div class="search-results-header">
+      <h1 id="searchTitle">Search Results</h1>
+      <p id="searchMeta"></p>
+      <form style="margin-top:16px;" onsubmit="event.preventDefault(); window.location.href='search.html?q='+encodeURIComponent(document.getElementById('searchQ').value)">
+        <div style="display:flex;max-width:600px;">
+          <input type="text" id="searchQ" placeholder="Search CNN..." style="flex:1;padding:12px 14px;font-size:15px;border:1px solid #ccc;border-radius:4px 0 0 4px;border-right:none;font-family:inherit;outline:none;">
+          <button type="submit" style="padding:12px 24px;font-size:14px;font-weight:700;background:#CC0000;color:white;border:none;border-radius:0 4px 4px 0;cursor:pointer;">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="search-results-list" id="searchResults"></div>
+  </main>
+
+  <footer class="main-footer"><div class="footer-inner"><div class="footer-logo"><a href="index.html"><svg viewBox="0 0 200 40" width="100" height="24"><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif" font-weight="900" font-size="38" letter-spacing="4">CNN</text></svg></a></div><div class="footer-nav"><div class="footer-col"><h4>News</h4><a href="section.html?cat=us">US</a><a href="section.html?cat=world">World</a><a href="section.html?cat=politics">Politics</a><a href="section.html?cat=business">Business</a></div><div class="footer-col"><h4>Features</h4><a href="section.html?cat=health">Health</a><a href="section.html?cat=entertainment">Entertainment</a><a href="section.html?cat=style">Style</a><a href="section.html?cat=travel">Travel</a></div><div class="footer-col"><h4>Watch</h4><a href="section.html?cat=watch">Live TV</a><a href="section.html?cat=watch">Shows</a><a href="section.html?cat=listen">Listen</a><a href="section.html?cat=watch">Films</a></div><div class="footer-col"><h4>More</h4><a href="section.html?cat=weather">Weather</a><a href="section.html?cat=games">Games</a><a href="section.html?cat=sports">Sports</a><a href="section.html?cat=science">Science</a></div><div class="footer-col"><h4>About</h4><a href="about.html">About CNN</a><a href="newsletters.html">Newsletters</a><a href="about.html">Transcripts</a><a href="feedback.html">Feedback</a></div></div><div class="footer-bottom"><div class="footer-legal"><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="privacy.html">Cookie Settings</a><a href="privacy.html">Ad Choices</a><a href="accessibility.html">Accessibility & CC</a></div><p class="footer-copyright">© 2026 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.</p></div></div></footer>
+
+  <script src="data.js"></script>
+  <script>
+    const now=new Date();document.getElementById('liveTimestamp').textContent='Updated '+now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZoneName:'short'})+', '+now.toLocaleDateString('en-US',{weekday:'short',month:'long',day:'numeric',year:'numeric'});
+    
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q') || '';
+    document.getElementById('searchQ').value = query;
+    document.getElementById('searchTitle').textContent = query ? `Search results for "${query}"` : 'Search CNN';
+
+    const articles = window.ARTICLES || [];
+    const results = query ? articles.filter(a => 
+      a.title.toLowerCase().includes(query.toLowerCase()) ||
+      a.categoryLabel.toLowerCase().includes(query.toLowerCase()) ||
+      a.body.toLowerCase().includes(query.toLowerCase())
+    ) : articles;
+
+    document.getElementById('searchMeta').textContent = results.length + ' results found';
+
+    document.getElementById('searchResults').innerHTML = results.map(a => `
+      <a href="article.html?id=${a.id}" class="search-result-item">
+        <div class="search-result-img"><img src="${a.image}" alt="" loading="lazy"></div>
+        <div class="search-result-text">
+          <h3>${a.title}</h3>
+          <p>${a.body.replace(/<[^>]*>/g, '').substring(0, 180)}...</p>
+          <div class="search-result-meta">${a.categoryLabel} · ${a.date} · ${a.author}</div>
+        </div>
+      </a>
+    `).join('');
+  </script>
+</body>
+</html>

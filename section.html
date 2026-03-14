@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNN</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- ========== TOP BAR ========== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="edition-links">
+        <a href="index.html" class="active">US</a>
+        <a href="section.html?cat=international">International</a>
+        <a href="section.html?cat=arabic">Arabic</a>
+        <a href="section.html?cat=espanol">Español</a>
+      </div>
+      <div class="top-bar-right">
+        <span class="timestamp" id="liveTimestamp"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="main-header">
+    <div class="header-inner">
+      <button class="hamburger-btn" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="header-left">
+        <a href="section.html?cat=watch" class="header-link">Watch</a>
+        <a href="section.html?cat=listen" class="header-link">Listen</a>
+      </div>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 200 40" width="120" height="28">
+          <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+                fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif"
+                font-weight="900" font-size="38" letter-spacing="4">CNN</text>
+        </svg>
+      </a>
+      <div class="header-right">
+        <button class="search-btn" aria-label="Search" onclick="document.getElementById('searchOverlay').classList.toggle('open')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <a href="signin.html" class="sign-in-btn">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== NAV BAR ========== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="section.html?cat=us" class="nav-link" data-cat="us">US</a></li>
+        <li><a href="section.html?cat=world" class="nav-link" data-cat="world">World</a></li>
+        <li><a href="section.html?cat=politics" class="nav-link" data-cat="politics">Politics</a></li>
+        <li><a href="section.html?cat=business" class="nav-link" data-cat="business">Business</a></li>
+        <li><a href="section.html?cat=health" class="nav-link" data-cat="health">Health</a></li>
+        <li><a href="section.html?cat=entertainment" class="nav-link" data-cat="entertainment">Entertainment</a></li>
+        <li><a href="section.html?cat=style" class="nav-link" data-cat="style">Style</a></li>
+        <li><a href="section.html?cat=travel" class="nav-link" data-cat="travel">Travel</a></li>
+        <li><a href="section.html?cat=sports" class="nav-link" data-cat="sports">Sports</a></li>
+        <li><a href="section.html?cat=science" class="nav-link" data-cat="science">Science</a></li>
+        <li><a href="section.html?cat=climate" class="nav-link" data-cat="climate">Climate</a></li>
+        <li><a href="section.html?cat=weather" class="nav-link" data-cat="weather">Weather</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== SEARCH OVERLAY ========== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+      <button class="search-close" onclick="document.getElementById('searchOverlay').classList.remove('open')">&times;</button>
+      <form class="search-form" onsubmit="event.preventDefault(); window.location.href='search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">
+        <input type="text" id="searchInput" placeholder="Search CNN..." autofocus>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== PAGE CONTENT ========== -->
+  <main class="main-content">
+    <div class="section-page-header">
+      <h1 id="sectionTitle"></h1>
+      <p id="sectionSubtitle"></p>
+    </div>
+
+    <div class="section-page-body" id="sectionBody">
+      <!-- Dynamic content injected by JS -->
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html">
+          <svg viewBox="0 0 200 40" width="100" height="24">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+                  fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif"
+                  font-weight="900" font-size="38" letter-spacing="4">CNN</text>
+          </svg>
+        </a>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>News</h4>
+          <a href="section.html?cat=us">US</a>
+          <a href="section.html?cat=world">World</a>
+          <a href="section.html?cat=politics">Politics</a>
+          <a href="section.html?cat=business">Business</a>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <a href="section.html?cat=health">Health</a>
+          <a href="section.html?cat=entertainment">Entertainment</a>
+          <a href="section.html?cat=style">Style</a>
+          <a href="section.html?cat=travel">Travel</a>
+        </div>
+        <div class="footer-col">
+          <h4>Watch</h4>
+          <a href="section.html?cat=watch">Live TV</a>
+          <a href="section.html?cat=watch">Shows</a>
+          <a href="section.html?cat=listen">Listen</a>
+          <a href="section.html?cat=watch">Films</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="section.html?cat=weather">Weather</a>
+          <a href="section.html?cat=games">Games</a>
+          <a href="section.html?cat=sports">Sports</a>
+          <a href="section.html?cat=science">Science</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About CNN</a>
+          <a href="newsletters.html">Newsletters</a>
+          <a href="about.html">Transcripts</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="privacy.html#cookies">Cookie Settings</a>
+          <a href="privacy.html#ads">Ad Choices</a>
+          <a href="accessibility.html">Accessibility & CC</a>
+        </div>
+        <p class="footer-copyright">© 2026 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.</p>
+        <p class="footer-disclaimer">CNN Sans™ & © 2016 Cable News Network.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    // Timestamp
+    const now = new Date();
+    document.getElementById('liveTimestamp').textContent = 
+      'Updated ' + now.toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit',timeZoneName:'short'}) + 
+      ', ' + now.toLocaleDateString('en-US', {weekday:'short', month:'long', day:'numeric', year:'numeric'});
+
+    // Get category from URL
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat') || 'us';
+
+    // Highlight active nav
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.dataset.cat === cat) link.classList.add('active');
+      else link.classList.remove('active');
+    });
+
+    // Section data
+    const sectionMeta = {
+      us: { title: 'US', subtitle: 'Get the latest news from across the United States' },
+      world: { title: 'World', subtitle: 'International news and breaking stories worldwide' },
+      politics: { title: 'Politics', subtitle: 'Political news, analysis and opinion' },
+      business: { title: 'Business', subtitle: 'Market updates, economic news and corporate stories' },
+      health: { title: 'Health', subtitle: 'Health, wellness and medical news' },
+      entertainment: { title: 'Entertainment', subtitle: 'Celebrity news, TV, movies and music' },
+      style: { title: 'Style', subtitle: 'Fashion, design, architecture and luxury' },
+      travel: { title: 'Travel', subtitle: 'Destinations, tips and travel news' },
+      sports: { title: 'Sports', subtitle: 'Scores, highlights and sports news' },
+      science: { title: 'Science', subtitle: 'Discoveries, research and innovation' },
+      climate: { title: 'Climate', subtitle: 'Climate change, environment and sustainability' },
+      weather: { title: 'Weather', subtitle: 'Forecasts, severe weather and climate updates' },
+      watch: { title: 'Watch', subtitle: 'Live TV, shows and on-demand video' },
+      listen: { title: 'Listen', subtitle: 'Podcasts and audio from CNN' },
+      games: { title: 'Games', subtitle: 'Puzzles, trivia and word games' },
+      international: { title: 'International Edition', subtitle: 'News from around the globe' },
+      arabic: { title: 'عربي', subtitle: 'CNN Arabic news coverage' },
+      espanol: { title: 'CNN en Español', subtitle: 'Noticias, actualidad y más' },
+    };
+
+    const meta = sectionMeta[cat] || { title: cat.charAt(0).toUpperCase() + cat.slice(1), subtitle: 'Latest news and updates' };
+    document.title = meta.title + ' - CNN';
+    document.getElementById('sectionTitle').textContent = meta.title;
+    document.getElementById('sectionSubtitle').textContent = meta.subtitle;
+
+    // Get articles for this category
+    const articles = (window.ARTICLES || []).filter(a => a.category === cat);
+    const allArticles = window.ARTICLES || [];
+    // If no articles for this category, show some from all
+    const displayArticles = articles.length > 0 ? articles : allArticles.slice(0, 8);
+
+    const body = document.getElementById('sectionBody');
+
+    // Featured article
+    if (displayArticles.length > 0) {
+      const feat = displayArticles[0];
+      body.innerHTML += `
+        <section class="content-section">
+          <div class="section-inner">
+            <div class="stories-grid">
+              <a href="article.html?id=${feat.id}" class="story-card story-card-featured">
+                <div class="story-card-img">
+                  <img src="${feat.image}" alt="" loading="eager">
+                </div>
+                <h3 class="story-card-headline">${feat.title}</h3>
+              </a>
+              <div class="story-card-list">
+                ${displayArticles.slice(1, 7).map(a => `
+                  <a href="article.html?id=${a.id}" class="story-list-item">
+                    <h3>${a.title}</h3>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    // More stories in quad grid
+    if (displayArticles.length > 7) {
+      body.innerHTML += `
+        <div class="section-divider"></div>
+        <section class="content-section">
+          <div class="section-inner">
+            <h2 class="section-title">More ${meta.title} Stories</h2>
+            <div class="stories-quad-grid">
+              ${displayArticles.slice(7, 15).map(a => `
+                <a href="article.html?id=${a.id}" class="quad-card">
+                  <div class="quad-card-img">
+                    <img src="${a.image}" alt="" loading="lazy">
+                  </div>
+                  <h3>${a.title}</h3>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    // Trending section with articles from other categories
+    const otherArticles = allArticles.filter(a => a.category !== cat).slice(0, 4);
+    if (otherArticles.length > 0) {
+      body.innerHTML += `
+        <div class="section-divider"></div>
+        <section class="content-section">
+          <div class="section-inner">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="stories-quad-grid">
+              ${otherArticles.map(a => `
+                <a href="article.html?id=${a.id}" class="quad-card">
+                  <div class="quad-card-img">
+                    <img src="${a.image}" alt="" loading="lazy">
+                  </div>
+                  <h3>${a.title}</h3>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    // Hamburger
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('nav-open');
+      this.classList.toggle('active');
+    });
+
+    // Sticky nav
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('nav-sticky', window.pageYOffset > 120);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,537 @@
+/* ============================
+   PAGES CSS — Article, Section, Utility pages
+   ============================ */
+
+/* ---------- SEARCH OVERLAY ---------- */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.search-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-overlay-inner {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.search-close {
+  position: absolute;
+  top: -60px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 36px;
+  cursor: pointer;
+  padding: 8px;
+  transition: opacity 0.2s;
+}
+
+.search-close:hover {
+  opacity: 0.7;
+}
+
+.search-form {
+  display: flex;
+  gap: 0;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 0;
+  background: white;
+  font-family: inherit;
+  outline: none;
+}
+
+.search-form button {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #CC0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-form button:hover {
+  background: #a00000;
+}
+
+/* ---------- SECTION PAGE HEADER ---------- */
+.section-page-header {
+  padding: 32px 20px 24px;
+  border-bottom: 3px solid #0c0c0c;
+  margin: 0 0 0;
+}
+
+.section-page-header h1 {
+  font-family: var(--font-headline);
+  font-size: 36px;
+  font-weight: 900;
+  color: #0c0c0c;
+  margin-bottom: 6px;
+}
+
+.section-page-header p {
+  color: #666;
+  font-size: 15px;
+}
+
+/* ---------- ARTICLE PAGE ---------- */
+.article-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+}
+
+.article-header {
+  margin-bottom: 28px;
+}
+
+.article-category {
+  display: inline-block;
+  color: #CC0000;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  transition: opacity 0.2s;
+}
+
+.article-category:hover {
+  opacity: 0.7;
+}
+
+.article-title {
+  font-family: var(--font-headline);
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #0c0c0c;
+  margin-bottom: 16px;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.article-author {
+  font-weight: 700;
+  color: #333;
+}
+
+.article-share {
+  margin-bottom: 0;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0f0f0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.share-btn:hover {
+  background: #ddd;
+}
+
+.article-hero-img {
+  margin: 24px 0;
+}
+
+.article-hero-img img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.img-credit {
+  font-size: 11px;
+  color: #999;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.article-body {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+.article-body p {
+  margin-bottom: 20px;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- RELATED STORIES ---------- */
+.related-stories {
+  padding: 30px 20px 40px;
+  border-top: 1px solid #e2e2e2;
+  margin-top: 20px;
+}
+
+/* ---------- UTILITY PAGES ---------- */
+.utility-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.utility-page h1 {
+  font-family: var(--font-headline);
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.utility-page .page-subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #0c0c0c;
+}
+
+.utility-page h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.utility-page p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.utility-page ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.utility-page ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 8px;
+  list-style: disc;
+}
+
+/* ---------- SIGN IN PAGE ---------- */
+.signin-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.signin-box {
+  background: white;
+  border: 1px solid #e2e2e2;
+  padding: 40px 32px;
+  border-radius: 4px;
+}
+
+.signin-box h1 {
+  font-family: var(--font-headline);
+  font-size: 28px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.signin-box .form-group {
+  margin-bottom: 20px;
+}
+
+.signin-box label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.signin-box input[type="email"],
+.signin-box input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.signin-box input:focus {
+  outline: none;
+  border-color: #CC0000;
+}
+
+.signin-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #CC0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.signin-submit:hover {
+  background: #a00000;
+}
+
+.signin-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signin-links a {
+  color: #CC0000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signin-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- SEARCH RESULTS PAGE ---------- */
+.search-results-header {
+  padding: 32px 20px 20px;
+  border-bottom: 2px solid #0c0c0c;
+}
+
+.search-results-header h1 {
+  font-family: var(--font-headline);
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.search-results-header p {
+  color: #666;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.search-results-list {
+  padding: 20px;
+}
+
+.search-result-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e2e2e2;
+  transition: opacity 0.2s;
+}
+
+.search-result-item:hover {
+  opacity: 0.8;
+}
+
+.search-result-img {
+  width: 200px;
+  min-width: 200px;
+  height: 120px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.search-result-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-result-text h3 {
+  font-family: var(--font-headline);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0c0c0c;
+}
+
+.search-result-text p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.search-result-meta {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}
+
+/* ---------- NEWSLETTER PAGE ---------- */
+.newsletter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.newsletter-card {
+  border: 1px solid #e2e2e2;
+  padding: 24px;
+  border-radius: 4px;
+  transition: box-shadow 0.2s;
+}
+
+.newsletter-card:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.newsletter-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.newsletter-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.newsletter-btn {
+  display: inline-block;
+  background: #CC0000;
+  color: white;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter-btn:hover {
+  background: #a00000;
+}
+
+/* ---------- FEEDBACK FORM ---------- */
+.feedback-form {
+  max-width: 600px;
+}
+
+.feedback-form .form-group {
+  margin-bottom: 20px;
+}
+
+.feedback-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.feedback-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form select:focus {
+  outline: none;
+  border-color: #CC0000;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .article-title {
+    font-size: 26px;
+  }
+  
+  .article-body {
+    font-size: 16px;
+  }
+
+  .section-page-header h1 {
+    font-size: 28px;
+  }
+
+  .search-result-item {
+    flex-direction: column;
+  }
+
+  .search-result-img {
+    width: 100%;
+    min-width: 100%;
+    height: 180px;
+  }
+
+  .newsletter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signin-box {
+    padding: 28px 20px;
+  }
+}
