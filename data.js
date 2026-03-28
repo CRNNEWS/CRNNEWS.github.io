@@ -469,4 +469,14 @@ window.ARTICLES = [
     <p>"Games are a great way to engage with current events in a low-pressure, fun way," said CNN's games editor. "We've been thrilled by the response — millions of people are playing every day."</p>
     <p>All games are free to play and available on both desktop and mobile. New puzzles are posted daily at 6 AM ET.</p>`
   },
+  {
+    id: 41, category: 'business', categoryLabel: 'Business',
+    title: 'Lawyer Dave Ramsay says making build to rent houses still counts as acquisition',
+    author: 'CNN Staff', date: 'March 28, 2026', readTime: 4,
+    image: 'https://picsum.photos/id/1025/900/500', imageCredit: 'CNN',
+    body: `<p>Prominent real estate lawyer Dave Ramsay recently made waves in the housing industry by asserting that the development of build-to-rent houses should still be legally and functionally classified as an acquisition.</p>
+    <p>As the housing market evolves and traditional homeownership becomes more elusive for many Americans, the build-to-rent sector has experienced explosive growth. This trend has sparked intense debates among legal experts, developers, and municipalities regarding how these properties should be treated under existing tax codes and zoning laws.</p>
+    <p>"There is a misconception that because you are turning dirt and pouring concrete, it's fundamentally different from buying an existing asset," Ramsay argued during a keynote address at the National Real Estate Symposium. "But when a developer builds a community specifically to hold and rent those homes, they are effectively acquiring a long-term, income-producing asset — precisely the same mechanism as purchasing a completed apartment complex."</p>
+    <p>Ramsay's interpretation could carry significant implications for the industry. If courts and tax authorities widely adopt this view, it could alter the financial structuring, depreciation schedules, and regulatory compliance requirements for future build-to-rent projects nationwide.</p>`
+  },
 ];

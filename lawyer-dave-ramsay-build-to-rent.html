@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNN</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- ========== TOP BAR ========== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="edition-links">
+        <a href="index.html" class="active">US</a>
+        <a href="section.html?cat=international">International</a>
+        <a href="section.html?cat=arabic">Arabic</a>
+        <a href="section.html?cat=espanol">Español</a>
+      </div>
+      <div class="top-bar-right">
+        <span class="timestamp" id="liveTimestamp"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="main-header">
+    <div class="header-inner">
+      <button class="hamburger-btn" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="header-left">
+        <a href="section.html?cat=watch" class="header-link">Watch</a>
+        <a href="section.html?cat=listen" class="header-link">Listen</a>
+      </div>
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 200 40" width="120" height="28">
+          <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+                fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif"
+                font-weight="900" font-size="38" letter-spacing="4">CNN</text>
+        </svg>
+      </a>
+      <div class="header-right">
+        <button class="search-btn" aria-label="Search" onclick="document.getElementById('searchOverlay').classList.toggle('open')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <a href="signin.html" class="sign-in-btn">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== NAV BAR ========== -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="section.html?cat=us" class="nav-link" data-cat="us">US</a></li>
+        <li><a href="section.html?cat=world" class="nav-link" data-cat="world">World</a></li>
+        <li><a href="section.html?cat=politics" class="nav-link" data-cat="politics">Politics</a></li>
+        <li><a href="section.html?cat=business" class="nav-link" data-cat="business">Business</a></li>
+        <li><a href="section.html?cat=health" class="nav-link" data-cat="health">Health</a></li>
+        <li><a href="section.html?cat=entertainment" class="nav-link" data-cat="entertainment">Entertainment</a></li>
+        <li><a href="section.html?cat=style" class="nav-link" data-cat="style">Style</a></li>
+        <li><a href="section.html?cat=travel" class="nav-link" data-cat="travel">Travel</a></li>
+        <li><a href="section.html?cat=sports" class="nav-link" data-cat="sports">Sports</a></li>
+        <li><a href="section.html?cat=science" class="nav-link" data-cat="science">Science</a></li>
+        <li><a href="section.html?cat=climate" class="nav-link" data-cat="climate">Climate</a></li>
+        <li><a href="section.html?cat=weather" class="nav-link" data-cat="weather">Weather</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== SEARCH OVERLAY ========== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+      <button class="search-close" onclick="document.getElementById('searchOverlay').classList.remove('open')">&times;</button>
+      <form class="search-form" onsubmit="event.preventDefault(); window.location.href='search.html?q='+encodeURIComponent(document.getElementById('searchInput').value)">
+        <input type="text" id="searchInput" placeholder="Search CNN..." autofocus>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== ARTICLE CONTENT ========== -->
+  <main class="main-content">
+    <article class="article-page">
+      <div class="article-header">
+        <a href="#" class="article-category" id="articleCategory"></a>
+        <h1 class="article-title" id="articleTitle"></h1>
+        <div class="article-meta">
+          <span class="article-author" id="articleAuthor"></span>
+          <span class="article-date" id="articleDate"></span>
+          <span class="article-read-time" id="articleReadTime"></span>
+        </div>
+        <div class="article-share">
+          <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied!'))">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+            Share
+          </button>
+        </div>
+      </div>
+      <div class="article-hero-img" id="articleHeroImg"></div>
+      <div class="article-body" id="articleBody"></div>
+    </article>
+
+    <!-- Related stories -->
+    <aside class="related-stories">
+      <div class="section-inner">
+        <h2 class="section-title">More Stories</h2>
+        <div class="stories-quad-grid" id="relatedStories"></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html">
+          <svg viewBox="0 0 200 40" width="100" height="24">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+                  fill="#CC0000" font-family="'CNN', Helvetica, Arial, sans-serif"
+                  font-weight="900" font-size="38" letter-spacing="4">CNN</text>
+          </svg>
+        </a>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>News</h4>
+          <a href="section.html?cat=us">US</a>
+          <a href="section.html?cat=world">World</a>
+          <a href="section.html?cat=politics">Politics</a>
+          <a href="section.html?cat=business">Business</a>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <a href="section.html?cat=health">Health</a>
+          <a href="section.html?cat=entertainment">Entertainment</a>
+          <a href="section.html?cat=style">Style</a>
+          <a href="section.html?cat=travel">Travel</a>
+        </div>
+        <div class="footer-col">
+          <h4>Watch</h4>
+          <a href="section.html?cat=watch">Live TV</a>
+          <a href="section.html?cat=watch">Shows</a>
+          <a href="section.html?cat=listen">Listen</a>
+          <a href="section.html?cat=watch">Films</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="section.html?cat=weather">Weather</a>
+          <a href="section.html?cat=games">Games</a>
+          <a href="section.html?cat=sports">Sports</a>
+          <a href="section.html?cat=science">Science</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="about.html">About CNN</a>
+          <a href="newsletters.html">Newsletters</a>
+          <a href="about.html">Transcripts</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="privacy.html#cookies">Cookie Settings</a>
+          <a href="privacy.html#ads">Ad Choices</a>
+          <a href="accessibility.html">Accessibility & CC</a>
+        </div>
+        <p class="footer-copyright">© 2026 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.</p>
+        <p class="footer-disclaimer">CNN Sans™ & © 2016 Cable News Network.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    // Timestamp
+    const now = new Date();
+    document.getElementById('liveTimestamp').textContent = 
+      'Updated ' + now.toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit',timeZoneName:'short'}) + 
+      ', ' + now.toLocaleDateString('en-US', {weekday:'short', month:'long', day:'numeric', year:'numeric'});
+
+    // Specific article ID for this page
+    const id = 41;
+
+    const allArticles = window.ARTICLES || [];
+    const article = allArticles.find(a => a.id === id) || allArticles[0];
+
+    if (article) {
+      document.title = article.title + ' - CNN';
+
+      // Highlight nav
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.dataset.cat === article.category) link.classList.add('active');
+      });
+
+      document.getElementById('articleCategory').textContent = article.categoryLabel;
+      document.getElementById('articleCategory').href = 'section.html?cat=' + article.category;
+      document.getElementById('articleTitle').textContent = article.title;
+      document.getElementById('articleAuthor').textContent = 'By ' + article.author;
+      document.getElementById('articleDate').textContent = article.date;
+      document.getElementById('articleReadTime').textContent = article.readTime + ' min read';
+      document.getElementById('articleHeroImg').innerHTML = `<img src="${article.image}" alt="${article.title}">
+        <p class="img-credit">${article.imageCredit}</p>`;
+      document.getElementById('articleBody').innerHTML = article.body;
+
+      // Related stories
+      const related = allArticles.filter(a => a.id !== id).sort(() => 0.5 - Math.random()).slice(0, 4);
+      document.getElementById('relatedStories').innerHTML = related.map(a => `
+        <a href="article.html?id=${a.id}" class="quad-card">
+          <div class="quad-card-img">
+            <img src="${a.image}" alt="" loading="lazy">
+          </div>
+          <h3>${a.title}</h3>
+        </a>
+      `).join('');
+    }
+
+    // Hamburger
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('nav-open');
+      this.classList.toggle('active');
+    });
+
+    // Sticky nav
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('nav-sticky', window.pageYOffset > 120);
+    });
+  </script>
+
+</body>
+</html>
