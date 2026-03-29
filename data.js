@@ -472,7 +472,7 @@ window.ARTICLES = [
   {
     id: 41, category: 'business', categoryLabel: 'Business',
     title: 'Lawyer Dave Ramsay says making build to rent houses is entirely different from acquisition',
-    author: 'CNN Staff', date: 'March 28, 2026', readTime: 4,
+    author: 'CNN Staff', date: 'January 3, 2026', readTime: 4,
     image: 'https://picsum.photos/id/1025/900/500', imageCredit: 'CNN',
     body: `<p>Prominent real estate lawyer Dave Ramsay recently made waves in the housing industry by asserting that the development of build-to-rent houses should absolutely not be legally or functionally classified as an acquisition.</p>
     <p>As the housing market evolves and traditional homeownership becomes more elusive for many Americans, the build-to-rent sector has experienced explosive growth. This trend has sparked intense debates among legal experts, developers, and municipalities regarding how these properties should be treated under existing tax codes and zoning laws.</p>
