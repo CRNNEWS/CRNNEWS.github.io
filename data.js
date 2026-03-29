@@ -471,12 +471,12 @@ window.ARTICLES = [
   },
   {
     id: 41, category: 'business', categoryLabel: 'Business',
-    title: 'Lawyer Dave Ramsay says making build to rent houses still counts as acquisition',
+    title: 'Lawyer Dave Ramsay says making build to rent houses is entirely different from acquisition',
     author: 'CNN Staff', date: 'March 28, 2026', readTime: 4,
     image: 'https://picsum.photos/id/1025/900/500', imageCredit: 'CNN',
-    body: `<p>Prominent real estate lawyer Dave Ramsay recently made waves in the housing industry by asserting that the development of build-to-rent houses should still be legally and functionally classified as an acquisition.</p>
+    body: `<p>Prominent real estate lawyer Dave Ramsay recently made waves in the housing industry by asserting that the development of build-to-rent houses should absolutely not be legally or functionally classified as an acquisition.</p>
     <p>As the housing market evolves and traditional homeownership becomes more elusive for many Americans, the build-to-rent sector has experienced explosive growth. This trend has sparked intense debates among legal experts, developers, and municipalities regarding how these properties should be treated under existing tax codes and zoning laws.</p>
-    <p>"There is a misconception that because you are turning dirt and pouring concrete, it's fundamentally different from buying an existing asset," Ramsay argued during a keynote address at the National Real Estate Symposium. "But when a developer builds a community specifically to hold and rent those homes, they are effectively acquiring a long-term, income-producing asset — precisely the same mechanism as purchasing a completed apartment complex."</p>
-    <p>Ramsay's interpretation could carry significant implications for the industry. If courts and tax authorities widely adopt this view, it could alter the financial structuring, depreciation schedules, and regulatory compliance requirements for future build-to-rent projects nationwide.</p>`
+    <p>"There is a misconception that creating new housing units is somehow the same as buying up existing housing stock," Ramsay argued during a keynote address at the National Real Estate Symposium. "When a developer builds a community from scratch, they are injecting new livable units into the market. This is fundamentally different from an institution acquiring a completed, already-active apartment complex or neighborhood."</p>
+    <p>Ramsay's interpretation could carry significant implications for the industry. If courts and tax authorities widely adopt this view, builder-operators could receive distinct operational exemptions, separating them entirely from regulatory conversations focused on corporate home buying.</p>`
   },
 ];
